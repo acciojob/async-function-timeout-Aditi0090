@@ -1,4 +1,3 @@
-//your JS code here. If required.
 const textInput = document.getElementById("text");
 const delayInput = document.getElementById("delay");
 const button = document.getElementById("btn");
@@ -13,11 +12,11 @@ async function displayMessage() {
     const delayTime = parseInt(delayInput.value, 10);
 
     if (!message || isNaN(delayTime) || delayTime < 0) {
-        output.innerText = "Please enter valid text and delay.";
+        output.innerText = "";
         return;
     }
 
-    output.innerText = "Waiting...";
+    output.innerText = ""; // Ensure output is initially empty
     await delay(delayTime);
     output.innerText = message;
 }
